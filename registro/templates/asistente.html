@@ -5,14 +5,71 @@
     <div class="row login-set">
                 <div class="col-md-3">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 fields-container">
                     <h3 class="sesion-title">
-                        Registro FLISOL 2016
+                        <strong>Registro FLISOL</strong>
                     </h3>
                     <p> Porfavor rellena todos los campos requeridos para completar tu registro</p>
-                    <form class="form-horizontal" role="form" method="post">
-                        {% csrf_token %}
-                        {{ form }}
+                    <form class="post-form" role="form" method="post">
+{% csrf_token %}
+{{ form.non_field_errors }}
+
+<div class="fieldWrapper col-sm-12 control-label">
+    <div class="col-sm-4 label-input">
+        Nombre y Apellido:
+    </div>
+    <div class="col-sm-8 row-nombre">
+    {{ form.nombre.errors }}
+    <label for="{{ form.nombre.id_for_label }}"></label>
+    {{ form.nombre }}
+    </div>
+
+</div>
+
+<div class="fieldWrapper col-sm-12 control-label">
+    <div class="col-sm-4 label-input">
+        Cedula (Sin Puntos):
+    </div>
+    <div class="col-sm-8 row-cedula">
+    {{ form.cedula.errors }}
+    <label for="{{ form.cedula.id_for_label }}"></label>
+    {{ form.cedula }}
+    </div>
+</div>
+
+<div class="fieldWrapper col-sm-12 control-label">
+    <div class="col-sm-4 label-input">
+        Email:
+    </div>
+    <div class="col-sm-8 row-email">
+    {{ form.email.errors }}
+    <label for="{{ form.email.id_for_label }}"></label>
+    {{ form.email }}
+    </div>
+</div>
+
+<div class="fieldWrapper col-sm-12 control-label">
+    <div class="col-sm-4 label-input">
+        Evento:
+    </div>
+    <div class="col-sm-8 row-evento">
+    {{ form.evento.errors }}
+    <label for="{{ form.evento.id_for_label }}"></label>
+    {{ form.evento }}
+    </div>
+</div>
+
+<div class="fieldWrapper col-sm-12 control-label">
+    <div class="col-sm-4 label-input">
+        Desea Certificado Impreso?
+    </div>
+    <div class="col-sm-8 row-certificado">
+    {{ form.certificadoImpreso.errors }}
+    <label for="{{ form.certificadoImpreso.id_for_label }}"></label>
+    {{ form.certificadoImpreso }}
+    </div>
+</div>
+                         <button type="submit" class="save btn btn-default btn-submit">Registrarse</button>
                     </form>
                 </div>
                 <div class="col-md-3">

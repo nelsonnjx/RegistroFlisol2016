@@ -10,12 +10,14 @@
     <meta name="author" content="">
 
     <title>FLISOL 2016 - Ponentes</title>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     {% load staticfiles %}
 
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+    
 
 
 </head>
@@ -25,25 +27,26 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main"> <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
 
-                        <span
-                        class="icon-bar"></span><span class="icon-bar"></span>
-
-                    </button> <a class="navbar-brand" href="{% url "home" %}"><img class="img-responsive" src="{% static 'rsc/logoflisol.png' %}" alt="FLISOL 2016" width="110px" heigth="49px"></a>
+                    </button> 
+                    <a class="navbar-brand" href="{% url "home" %}"><img class="img-responsive" src="{% static 'rsc/logoflisol.png' %}" alt="FLISOL 2016" width="110px" heigth="49px"></a>
 
                 </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="collapse navbar-collapse" id="navbar-main">
                     <ul class="nav navbar-nav">
-                        <li>	<a class="" href="{% url "home" %}">Inicio</a>
+                        <li class="">	<a class="" href="{% url "home" %}">Inicio</a>
 
                         </li>
                         <li class="">	<a class="" href="{% url "login" %}">Ponentes</a>
 
                         </li>
-                        <li>	<a class="" href="{% url "asistente" %}">Asistir</a>
+                        <li class="">	<a class="" href="{% url "asistente" %}">Asistir</a>
 
                         </li>
                     </ul>
@@ -53,11 +56,13 @@
                         </li>
                     </ul>
                 </div>
-            </nav>
+            </div>
 
 {% block content %}{% endblock %}
 
-</div>
+
+
+
 </div>
 </div>
 </body>
