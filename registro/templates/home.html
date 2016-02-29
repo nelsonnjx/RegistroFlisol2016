@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block content %}
+
+            <div class="jumbotron text-center">
+                	<h2 class="">
+					Bienvenido al Sistema de Registro del FLISOL 2016
+					</h2>
+
+                <p class="">A través de esta web podrá registrarse en el Evento.</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 text-center">
+            	<h2 class="">
+				Asistentes
+			</h2>
+
+            <p class="">Para registrarte como asistente a un evento, ingresa en esta sección.</p>
+
+            <a href="{% url "asistente" %}"> <button type="button" class="btn btn-primary btn-lg">Asistente</button></a>
+        </div>
+        <div class="col-md-4 text-center">
+            	<h2 class="">
+				Ponente
+			</h2>
+
+            <p class="">Para ingresar como ponente y registrar tu ponencia, ingresa en esta sección</p>
+
+            <a href="{% url "login" %}"><button type="button" class="btn btn-primary btn-lg">Ponente</button></a>
+        </div>
+        <div class="col-md-4 text-center">
+            	<h2 class="">
+				Administrador
+			</h2>
+
+            <p class="">Para administrar el sistema, ingresa aqui.</p>
+
+            <a href="{% url "admin:index" %}"><button type="button" class="btn btn-primary btn-lg">Administradores</button></a>
+        </div>
+    </div>
+
+{% endblock %}
