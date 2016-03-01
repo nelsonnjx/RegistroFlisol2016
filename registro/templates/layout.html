@@ -9,8 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>FLISOL 2016 - Ponentes</title>
-    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <title>FLISOL 2016</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     {% load staticfiles %}
@@ -29,7 +30,7 @@
         <div class="col-md-12">
             <div class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main"> <span class="sr-only">Toggle navigation</span>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -46,11 +47,16 @@
                         <li class="">	<a class="" href="{% url "login" %}">Ponentes</a>
 
                         </li>
-                        <li class="">	<a class="" href="{% url "asistente" %}">Asistir</a>
+                        <li class="">	<a class="" href="{% url "asistentes" %}">Asistir</a>
 
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
+                        {% if user.is_authenticated %}
+                        <li> <a class="" href="{% url "logout" %}">Cerrar Sesión</a>
+
+                        </li>
+                        {% endif %}
                         <li>	<a class="" href="{% url "admin:index" %}">Admin</a>
 
                         </li>

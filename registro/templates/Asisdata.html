@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block content %}
+
+ <div class="jumbotron text-center fields-container">
+{% if next %}
+    {% if user.is_authenticated %}
+    <p class="alert"><br/>Tu cuenta no posee permisos suficientes para acceder a esta página.<br/></p>
+    {% else %}
+    <p class="alert"><br/>Inicie sesión para continuar.<br/></p>
+    {% endif %}
+{% endif %}
+					<h2>
+					Bienvenido
+					</h2>
+
+                <p>Ya te has registrado, puedes verificar tus datos aqui.</p>
+ 
+
+            </div>
+    <div class="row data-row">
+    	<div class="col-sm-12 header-table">
+    		Nombre y Apellido
+    	</div>
+    	<div class="col-sm-12 header-data">
+    		{{ asisdata.nombre }}
+    	</div>
+
+    	<div class="col-sm-3 header-table">
+    		Cedula de Identidad
+    	</div>
+    	<div class="col-sm-3 header-data">
+    		{{ asisdata.cedula }}
+    	</div>
+    	<div class="col-sm-3 header-table">
+    		Correo
+    	</div>
+    	<div class="col-sm-3 header-data">
+    		<a href="mailto:{{ user.email }}">{{ asisdata.email }}</a>
+    	</div>
+    	<div class="col-sm-3 header-table">
+    		Certificado Impreso
+    	</div>
+    	<div class="col-sm-3 header-data">
+    		{% if asisdata.certificadoImpreso %}
+    		Si
+    		{% else %}
+    		No
+    		{% endif %}
+
+    	</div>
+    	<div class="col-sm-3 header-table">
+    		Evento
+    	</div>
+    	<div class="col-sm-3 header-data">
+    		{{ asisdata.evento }}
+    	</div>
+
+{% endblock %}

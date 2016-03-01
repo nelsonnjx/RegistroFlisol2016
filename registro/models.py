@@ -25,13 +25,12 @@ class Evento(models.Model):
         ordering = ['-nombre']
 
 class Ponente(models.Model):
-    user = models.OneToOneField(User)
-    nombre = models.CharField('Nombre Completo', max_length=70)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     cedula = models.PositiveIntegerField('Cedula')
     email = models.EmailField('Correo')
-    telefono = models.PositiveIntegerField('Telefono')
-    website = models.URLField('Sitio Web')
-    eventos = models.ManyToManyField(Evento)
+    telefono = models.PositiveIntegerField('Telefono', blank=True)
+    website = models.URLField('Sitio Web', blank=True)
+    eventos = models.ManyToManyField(Evento, blank=True)
     def __str__(self):
         return "%s's profile" % self.user
 
@@ -45,10 +44,10 @@ class Ponencia(models.Model):
 
 class Asistente(models.Model):
     nombre = models.CharField('Nombre', max_length=60)
-    cedula = models.PositiveIntegerField('Cedula')
+    cedula = models.PositiveIntegerField('Cedula', primary_key=True)
     email = models.EmailField('Correo')
     certificadoImpreso = models.BooleanField('Certificado')
-    evento = models.ForeignKey(Evento, on_delete=models.CASCADE)
+    evento = models.ForeignKey(Evento, on_delete=models.CASCADE, blank=True)
     def __str__(self):
         return self.nombre
 

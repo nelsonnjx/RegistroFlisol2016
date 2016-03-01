@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block content %}
+
+ <div class="jumbotron text-center fields-container">
+{% if next %}
+    {% if user.is_authenticated %}
+    <p class="alert"><br/>Tu cuenta no posee permisos suficientes para acceder a esta página.<br/></p>
+    {% else %}
+    <p class="alert"><br/>Inicie sesión para continuar.<br/></p>
+    {% endif %}
+{% endif %}
+					<h2>
+					Bienvenido
+					</h2>
+
+                <p>Has Ingresado como {{ user.username }}.</p>
+ 
+
+            </div>
+    <div class="row data-row">
+    	<div class="col-sm-12 header-table">
+    		Nombre y Apellido
+    	</div>
+    	<div class="col-sm-12 header-data">
+    		{{ user.first_name }}  {{ user.last_name }}
+    	</div>
+
+    	<div class="col-sm-3 header-table">
+    		Cedula de Identidad
+    	</div>
+    	<div class="col-sm-3 header-data">
+    		{{ user.ponente.cedula }}
+    	</div>
+    	<div class="col-sm-3 header-table">
+    		Correo
+    	</div>
+    	<div class="col-sm-3 header-data">
+    		<a href="mailto:{{ user.email }}">{{ user.email }}</a>
+    	</div>
+    	<div class="col-sm-3 header-table">
+    		Teléfono
+    	</div>
+    	<div class="col-sm-3 header-data">
+    		0{{ user.ponente.telefono }}
+    	</div>
+    	<div class="col-sm-3 header-table">
+    		Website
+    	</div>
+    	<div class="col-sm-3 header-data">
+    		<a href="{{ user.ponente.website }}">{{ user.ponente.website }}</a>
+    	</div>
+    	<div class="col-sm-12 header-table">
+    		Eventos en los que participa
+    	</div>
+    	<div class="col-sm-12 header-data">
+    		{% if user.ponente.eventos == registro.Evento.None  %}
+    		{{ user.ponente.eventos }}
+    		{% else %}
+    		Ninguno
+    		{% endif %}
+    	</div>
+
+{% endblock %}

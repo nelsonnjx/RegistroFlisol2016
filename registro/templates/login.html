@@ -3,45 +3,61 @@
 
 <div class="container-fluid">
 	<div class="row login-set">
-				<div class="col-md-3">
-				</div>
-				<div class="col-md-6 fields-container">
-					<h3 class="sesion-title">
-						<strong>Iniciar Sesion - Ponentes</strong>
-					</h3>
-					<form class="form-horizontal" role="form" method="post">
-						<div class="form-group">
-							 
-							<label for="inputEmail3" class="col-sm-2 control-label">
-								Usuario
-							</label>
-							<div class="col-sm-10">
-								<input class="form-control" id="inputEmail3" type="email" />
-							</div>
-						</div>
-						<div class="form-group">
-							 
-							<label for="inputPassword3" class="col-sm-2 control-label">
-								Contraseña
-							</label>
-							<div class="col-sm-10">
-								<input class="form-control" id="inputPassword3" type="password" />
-							</div>
-						</div>
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6 fields-container">
+                    <h3 class="sesion-title">
+                        <strong>Iniciar Sesión Ponentes</strong>
+                    </h3>
+                    {% if form.errors %}
+<p class="alert"><br/>Tu nombre de usuario o contraseña no coinciden, intenta nuevamente.<br/></p>
+{% endif %}
 
-						<div class="form-group">
-							<div class="col-sm-12 col-centered">
-								 
-								<button type="submit" class="btn btn-default btn-submit">
-									Iniciar Sesión
-								</button>
-							</div>
-						</div>
-					</form>
-				</div>
-				<div class="col-md-3">
-				</div>
-	</div>
+{% if next %}
+    {% if user.is_authenticated %}
+    <p class="alert"><br/>Tu cuenta no posee permisos suficientes para acceder a esta página.<br/></p>
+    {% else %}
+    <p class="alert"><br/>Inicie sesión para continuar.<br/></p>
+    {% endif %}
+{% endif %}
+
+
+{% if user.is_authenticated == False%}
+<form method="post" action="{% url 'login' %}">
+	{% csrf_token %}
+<div class="fieldWrapper col-sm-12 control-label">
+    <div class="col-sm-4 label-input">
+    	{{ form.username.label_tag }}
+    </div>
+    <div class="col-sm-8 row-nombre">
+    	{{ form.username }}
+    </div>
+
 </div>
+
+<div class="fieldWrapper col-sm-12 control-label">
+    <div class="col-sm-4 label-input">
+    	{{ form.password.label_tag }}
+    </div>
+    <div class="col-sm-8 row-nombre">
+    	{{ form.password }}
+    </div>
+
+</div>
+
+
+<input class="save btn btn-default btn-submit" type="submit" value="Ingresar" />
+<input type="hidden" name="next" value="{% url "userprofile" %}" />
+</form>
+
+{# Assumes you setup the password_reset view in your URLconf #}
+<p><a class="white" href="{% url 'password_reset' %}">¿Olvido Contraseña?</a></p>
+{% else %}
+<p><br/><strong>Ya has iniciado sesión, cierra esta sesión para abrir otra cuenta</br></br>Accede a tus datos aqui:
+	</br><a href="{% url 'userprofile' %}"><button class="btn btn-default btn-submit">Perfil de Usuario</button></strong></a></p>
+{% endif %}
+
+
+
 
 {% endblock %}

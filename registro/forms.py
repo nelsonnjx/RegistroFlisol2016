@@ -6,3 +6,4 @@ class AsistenteForm(forms.ModelForm):
        class Meta:
         model = Asistente
         fields = ['nombre', 'cedula', 'email', 'certificadoImpreso', 'evento']
+
