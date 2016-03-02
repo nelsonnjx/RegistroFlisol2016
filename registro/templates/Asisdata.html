@@ -21,10 +21,13 @@
     	<div class="col-sm-12 header-table">
     		Nombre y Apellido
     	</div>
+    </div>
+    <div class="row data-row">
     	<div class="col-sm-12 header-data">
     		{{ asisdata.nombre }}
     	</div>
-
+    </div>
+    <div class="row data-row">
     	<div class="col-sm-3 header-table">
     		Cedula de Identidad
     	</div>
@@ -37,6 +40,8 @@
     	<div class="col-sm-3 header-data">
     		<a href="mailto:{{ user.email }}">{{ asisdata.email }}</a>
     	</div>
+    </div>
+    <div class="row data-row">
     	<div class="col-sm-3 header-table">
     		Certificado Impreso
     	</div>
@@ -54,5 +59,12 @@
     	<div class="col-sm-3 header-data">
     		{{ asisdata.evento }}
     	</div>
+    </div>
+</br>
+</br>
+<a href="comprobante/{{ asisdata.cedula }}" class="white"><button name='find' class="btn btn-default btn-submit"><strong>COMPROBANTE</strong></button></a> <a href="edit_asistente/{{ asisdata.cedula }}" class="white"><button name='find' class="btn btn-default btn-submit"><strong>EDITAR REGISTRO</strong></button></a>
+
+
+
 
 {% endblock %}

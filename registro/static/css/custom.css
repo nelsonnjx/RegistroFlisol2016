@@ -15,6 +15,26 @@ p.alert{
 	font-weight: bold;
 }
 
+.comp-row{
+	margin: 15px 100px 0px 100px;
+	padding-bottom: 10px;
+	border: 10px solid;
+
+}
+
+.flisol-logo{
+	margin: 0 auto;
+	display: inline-block;
+}
+
+.comp-title{
+	font-size: 18px;
+	font-weight: bolder;
+	text-align: center;
+	text-decoration: underline;
+	margin: 5px 0px 5px 0px;
+}
+
 .data-row{
 	margin: 5px 100px 5px 100px;
 }

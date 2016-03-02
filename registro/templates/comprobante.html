@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{ comprobante.nombre }} - FLISOL 2016</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    {% load staticfiles %}
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+    
+
+
+</head>
+
+<body id="page-top" class="index">
+    <div class="container-fluid">
+    <div class="row comp-row">
+        <div class="col-md-12">
+            <img class="img-responsive flisol-logo" src="{% static 'rsc/logoflisol.png' %}" alt="FLISOL 2016" width="201px" heigth="90px">
+        </div>
+        
+
+        <div class="col-md-6">
+
+        <div class="col-md-12 comp-title">
+            Nombre y Apellido
+        </div>
+        <div class="col-md-12">
+            {{ comprobante.nombre }}
+        </div>
+        <div class="col-md-12 comp-title">
+            Cedula
+        </div>
+        <div class="col-md-12">
+            {{ comprobante.cedula  }}
+        </div>
+        <div class="col-md-12 comp-title">
+            Email
+        </div>
+        <div class="col-md-12">
+            {{ comprobante.email }}
+        </div>
+        <div class="col-md-12 comp-title">
+            Certificado Impreso
+        </div>
+        <div class="col-md-12">
+            {% if comprobante.certificadoImpreso %}
+            Si
+            {% else %}
+            No
+            {% endif %}
+        </div>
+        </div>
+        <div class="col-md-6">
+        <div class="col-md-12 comp-title">
+            QR CODE
+        </div>
+        <div class="col-md-12">
+            <a href="http://nelsonnjx.pythonanywhere.com/asistente/{{ comprobante.cedula }}" target="_blank"><img src='https://chart.googleapis.com/chart?cht=qr&chl=http%3A%2F%2Fnelsonnjx.pythonanywhere%3A8000%2Fasistente%2F{{ comprobante.cedula }}&chs=180x180&choe=UTF-8&chld=L|2' rel='nofollow' alt='qr code'></a>
+    </div>
+    </div>
+
+</div>
+</div>
+</br>
+    <input class="btn btn-default btn-submit" type="button"
+  onClick="window.print()"
+  value="Imprimir Comprobante"/>
+
+</body>
+</html>

@@ -7,16 +7,16 @@
                 </div>
                 <div class="col-md-6 fields-container">
                     <h3 class="sesion-title">
-                        <strong>Registro FLISOL</strong>
+                        <strong>Editar Registro</strong>
                     </h3>
-                    <p> Porfavor rellena todos los campos requeridos para completar tu registro</p>
-{% if error_msg %}
-                <p class="alert">Cédula Ya Registrada</p>
-                {% endif %}
+                    <p> Porfavor reingresa todos los campos requeridos para completar tu registro</p>
 
                     <form class="post-form" role="form" method="post">
-{% csrf_token %}
-{{ form.non_field_errors }}
+<form action="" method="post">{% csrf_token %}
+
+{% if error_msg %}
+<p class="alert"><br/>Ya existe alguien más registrado con la cédula indicada.<br/></p>
+{% endif %}
 
 <div class="fieldWrapper col-sm-12 control-label">
     <div class="col-sm-4 label-input">
@@ -73,7 +73,7 @@
     {{ form.certificadoImpreso }}
     </div>
 </div>
-                         <button name='new' type="submit" class="save btn btn-default btn-submit">Registrarse</button>
+                         <button name='new' type="submit" class="save btn btn-default btn-submit" value="Update">Registrarse</button>
                     </form>
                 </div>
                 <div class="col-md-3">
@@ -81,44 +81,6 @@
             </div>
         </div>
 
-
-
-<div class="container-fluid">
-    <div class="row login-set">
-    
-                <div class="col-md-3">
-                </div>
-                <div class="col-md-6 fields-container">
-                    <h3 class="sesion-title">
-                        <strong>Buscar Registrado</strong>
-                    </h3>
-
-                    Si ya has completado el registro, verifica tus datos aqui
-                    <form class="form-horizontal" name="asisdata" role="form" method="post">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            </br>
-                            <label for="cedula" class="col-sm-4 control-label">
-                                Cedula
-                            </label>
-                            <div class="col-sm-8 row-cedula">
-                                <input class="form-control" id="cedula" name="cedula"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-12 col-centered">
-                                 
-                                <button name='find' type="submit" class="btn btn-default btn-submit">
-                                    Buscar
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-md-3">
-                </div>
-    </div>
-</div>
 
 
 {% endblock %}
