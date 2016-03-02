@@ -59,6 +59,8 @@ def edit_asistente(request, id):
                 form = AsistenteForm(request.POST, instance=edit_asist)
                 if form.is_valid():
                    registered = form.save()
+                   Asistente.objects.get(pk = id).delete()
+
                    return HttpResponseRedirect ('/asistente/' + request.POST.get('cedula'))
 
 
