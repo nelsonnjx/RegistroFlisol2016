@@ -6,6 +6,59 @@ body {
   text-align: center;
 }
 
+a.white{
+	color: white;
+}
+
+p.alert{
+	color:red;
+	font-weight: bold;
+}
+
+.comp-row{
+	margin: 15px 100px 0px 100px;
+	padding-bottom: 10px;
+	border: 10px solid;
+
+}
+
+.flisol-logo{
+	margin: 0 auto;
+	display: inline-block;
+}
+
+.comp-title{
+	font-size: 18px;
+	font-weight: bolder;
+	text-align: center;
+	text-decoration: underline;
+	margin: 5px 0px 5px 0px;
+}
+
+.data-row{
+	margin: 5px 100px 5px 100px;
+}
+
+.header-table{
+	background: #3279b5;
+	color: white;
+	font-size: 20px;
+	font-weight: bolder;
+	border: 1px solid #3279b5;
+	border-radius: 20px;
+}
+
+.header-data{
+	font-size: 20px;
+	border: 1px solid #3279b5;
+	border-radius: 20px;
+}
+
+a.white:hover{
+	color: #3279b5 ;
+	text-decoration: none;
+}
+
 a.navbar-brand {
 	margin: 0px 10px 0px 10px;
 	padding: 0px 0px 0px 0px;
@@ -15,6 +68,52 @@ a.navbar-brand {
 	color: white;
 	padding-top: 100px;
 	background-color: #3279b5;
+}
+
+.fields-container{
+	background-color: #00506d;
+	border-radius: 10px;
+	padding-bottom: 20px;
+	color: white;
+}
+
+.fieldWrapper{
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+.row-nombre input{
+	width: 70%;
+	float: left;
+	color: black;
+}
+
+.row-email input{
+	width: 70%;
+	float: left;
+	color: black;
+}
+
+.row-evento select{
+	width: 70%;
+	float: left;
+	color: black;
+}
+
+.row-certificado input{
+	float: left;
+	color: black;
+}
+
+.label-input{
+	text-align: center;
+	font-weight: bold;
+
+}
+.row-cedula input{
+	width: 50%;
+	float: left;
+	color: black;
 }
 
 .navbar-right {

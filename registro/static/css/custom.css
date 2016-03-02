@@ -22,6 +22,31 @@ p.alert{
 
 }
 
+
+footer {
+	background-color:#e0e0e0;
+	-webkit-box-shadow: 0px -3px 15px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    0px -3px 15px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         0px -3px 15px 0px rgba(50, 50, 50, 0.75);
+	padding: 15px 0px 5px 0px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+
+}
+
+a.footer-link {
+	color: #6f6f6f;
+	transition: all 0.3s ease 0s;
+}
+
+a.footer-link:hover {
+	color: #474747;
+	text-decoration: none;
+	font-weight: bold;
+}
+
 .flisol-logo{
 	margin: 0 auto;
 	display: inline-block;
