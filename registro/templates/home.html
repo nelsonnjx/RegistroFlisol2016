@@ -2,14 +2,17 @@
 {% block content %}
 {% load static %}
 <div class="elementsjum">
-            <div class="jumbotron fields-container" id="jumbo">
-                    <div class="backflisol">
-                        </br>
-                        <img src="{% static 'rsc/BannerTop.png' %}" heigth="207px" width="480px">
-                        <img src="{% static 'rsc/LogoFlisol.png' %}" heigth="300px" width="300px">
-                        <img src="{% static 'rsc/mouse.png' %}" heigth="100px" width="100px">
+    <div class="backflisol">
+        <img src="{% static 'rsc/BannerTop.png' %}" heigth="207px" width="480px">
 
-                    </div>
+
+        <img src="{% static 'rsc/LogoFlisol.png' %}" heigth="300px" width="300px">
+
+
+        <img src="{% static 'rsc/mouse.png' %}" heigth="100px" width="100px">
+        </br>
+    </div>
+            <div class="jumbotron fields-container" id="jumbo">
                 	<h2 class="jumbostuff">
                             <style>
                                 h2.jumbostuff {
@@ -22,8 +25,10 @@
                 <p class="">A través de esta web podrá registrarse en el Evento.</p>
 
             </div>
-    <div class="row">
+    <div class="row afterjarea">
+
         <div class="col-md-4 text-center">
+            <div class="col-md-12 afterj">
             	<h2 class="jumbostuff">
 				Asistentes
 			</h2>
@@ -31,8 +36,10 @@
             <p class="">Para registrarte como asistente a un evento, ingresa en esta sección.</p>
 
             <a href="{% url "asistentes" %}"> <button type="button" class="btn btn-primary btn-lg btn-green">Asistente</button></a>
+            </div>
         </div>
         <div class="col-md-4 text-center">
+            <div class="col-md-12 afterj">
             	<h2 class="jumbostuff">
 				Ponente
 			</h2>
@@ -41,7 +48,9 @@
 
             <a href="{% url "login" %}"><button type="button" class="btn btn-primary btn-lg btn-green">Ponente</button></a>
         </div>
+        </div>
         <div class="col-md-4 text-center">
+            <div class="col-md-12 afterj">
             	<h2 class="jumbostuff">
 				Administrador
 			</h2>
@@ -49,6 +58,7 @@
             <p class="">Para administrar el sistema, ingresa aqui.</p>
 
             <a href="{% url "admin:index" %}"><button type="button" class="btn btn-primary btn-lg btn-green">Administradores</button></a>
+        </div>
         </div>
     </div>
 </div>
