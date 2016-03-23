@@ -46,7 +46,6 @@ class Asistente(models.Model):
     nombre = models.CharField('Nombre', max_length=60)
     cedula = models.PositiveIntegerField('Cedula', primary_key=True)
     email = models.EmailField('Correo')
-    certificadoImpreso = models.BooleanField('Certificado')
     evento = models.ForeignKey(Evento, on_delete=models.CASCADE, blank=True)
     def __str__(self):
         return self.nombre

@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-
+<div class="elementsjum">
  <div class="jumbotron text-center fields-container">
 {% if next %}
     {% if user.is_authenticated %}
@@ -64,7 +64,7 @@
 </br>
 <a href="comprobante/{{ asisdata.cedula }}" class="white"><button name='find' class="btn btn-default btn-submit"><strong>COMPROBANTE</strong></button></a> <a href="edit_asistente/{{ asisdata.cedula }}" class="white"><button name='find' class="btn btn-default btn-submit"><strong>EDITAR REGISTRO</strong></button></a>
 
-
+</div>
 
 
 {% endblock %}

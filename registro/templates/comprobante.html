@@ -18,7 +18,12 @@
 
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/custom.css' %}" rel="stylesheet">
-    
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700">
+    <style>
+      body {
+        font-family: 'Roboto Condensed', serif;
+      }
+    </style>
 
 
 </head>
@@ -28,6 +33,10 @@
     <div class="row comp-row">
         <div class="col-md-12">
             <img class="img-responsive flisol-logo" src="{% static 'rsc/logoflisol.png' %}" alt="FLISOL 2016" width="201px" heigth="90px">
+        </div>
+        <div class="col-md-12">
+          Se debe entregar este comprobante por mesa técnica a la entrada del evento, para verificar sus datos en nuestro sistema
+          </br></br>
         </div>
         <div class="col-md-12">
           <strong>  {{ comprobante.evento.nombre }}</strong>
@@ -59,16 +68,6 @@
         <div class="col-md-12">
             {{ comprobante.email }}
         </div>
-        <div class="col-md-12 comp-title">
-            Certificado Impreso
-        </div>
-        <div class="col-md-12">
-            {% if comprobante.certificadoImpreso %}
-            Si
-            {% else %}
-            No
-            {% endif %}
-        </div>
         </div>
         <div class="col-md-6">
         <div class="col-md-12 comp-title">
@@ -83,7 +82,7 @@
 </div>
 </div>
 </br>
-    <button class="btn btn-default btn-submit print-button" type="button"
+    <button class="btn btn-default btn-submit print-button btn-green" type="button"
   onClick="window.print()"> <img class="img-responsive flisol-logo" src="{% static 'rsc/printer.png' %}" alt="Print" width="24px" heigth="24px">&nbsp <strong> IMPRIMIR COMPROBANTE </strong></button>
 
 </body>

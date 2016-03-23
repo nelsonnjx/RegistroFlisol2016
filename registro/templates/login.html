@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-
+<div class="elementsjum">
 <div class="container-fluid">
 	<div class="row login-set">
                 <div class="col-md-3">
@@ -51,7 +51,7 @@
 </form>
 
 {# Assumes you setup the password_reset view in your URLconf #}
-<p><a class="white" href="{% url 'password_reset' %}">¿Olvido Contraseña?</a></p>
+
 {% else %}
 <p><br/><strong>Ya has iniciado sesión, cierra esta sesión para abrir otra cuenta</br></br>Accede a tus datos aqui:
 	</br><a href="{% url 'userprofile' %}"><button class="btn btn-default btn-submit">Perfil de Usuario</button></strong></a></p>
@@ -61,5 +61,6 @@
 </div>
 </div>
 
+</div>
 
 {% endblock %}

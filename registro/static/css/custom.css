@@ -87,17 +87,17 @@ a.footer-link:hover {
 }
 
 .header-table{
-	background: #3279b5;
+	background: #222222;
 	color: white;
 	font-size: 20px;
 	font-weight: bolder;
-	border: 1px solid #3279b5;
+	border: 1px solid #222222;
 	border-radius: 20px;
 }
 
 .header-data{
 	font-size: 20px;
-	border: 1px solid #3279b5;
+	border: 1px solid #222222;
 	border-radius: 20px;
 }
 
@@ -113,15 +113,20 @@ a.navbar-brand {
 
 .jumbotron {
 	color: white;
-	padding-top: 100px;
-	background-color: #3279b5;
+	padding-top: 50px;
 }
 
 .fields-container{
-	background-color: #00506d;
+	background-color: #219439;
 	border-radius: 10px;
 	padding-bottom: 20px;
 	color: white;
+}
+
+#jumbo{
+	padding-left: 0px;
+	padding-right: 0px;
+	font-weight: 700;
 }
 
 .fieldWrapper{
@@ -172,7 +177,7 @@ a.navbar-brand {
 }
 
 h3.sesion-title {
-	background-color: #3279b5;
+	background-color: #026312;
 	color: white;
 	border-radius: 10px;
 }
@@ -185,4 +190,25 @@ h3.sesion-title {
 .btn-submit:hover{
 	background-color: #286090;
 	color: #e1e1e1;
+}
+.btn-green {
+	background-color: #219439;
+	border-color: #219439;
+}
+
+.btn-green:hover {
+	background-color: #026312;
+	border-color: #026312;
+}
+
+.backflisol {
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	height: auto;
+	background:url('../rsc/BannerTopBksmall.png');
+}
+
+.elementsjum {
+	padding-bottom: 100px;
 }
